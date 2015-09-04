@@ -2,7 +2,7 @@
   "name": "rxjs-aws",
   "version": "0.0.2",
   "description": "Reactive Extension interface to AWS sdk for Node",
-  "main": "index.js",
+  "main": "lib/rxjs-aws.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.1.50",
+    "dotenv": "^1.2.0",
     "lodash": "^3.10.1",
     "rx": "^3.1.2"
   }
