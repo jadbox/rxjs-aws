@@ -1,10 +1,10 @@
-var rx = require('rx'),
+var rx = require('rxjs-plus'),
 	rxo = rx.Observable,
-	rxn = rxo.fromNodeCallback, rxed = rxo.from;
-require('rxjs-plus');
+	rxn = rx.Observable.fromNodeCallback, 
+  rxed = rx.Observable.from;
+
 var fs = require('fs');
 var _ = require('lodash-fp');
-var __ = require('lodash-fp');
 var pr = require('predicate');
 
 var Benchmark = require('benchmark');
@@ -25,8 +25,9 @@ function contains (val) {
  // __(["1","2","13"]).filter(__.includes("1")).subscribe( function(e) {} );
  //rxed(["1","2","13","1","2","13","1","2","13"]).filter(pr.contains("1")).subscribe( console.log );
 
- rxed(["1","2","13","1","2","13","1","2","13"]).filterIncludes("1").map(function(d){return d + "test"}).subscribe( function(e) {} );
-return
+//rxed(["1","2","13","1","2","13","1","2","13"]).filterIncludes("1")
+//  .map(function(d){return d + "test"}).subscribe( function(e) { console.log(e); } );
+//return
 
 var suite = new Benchmark.Suite;
  

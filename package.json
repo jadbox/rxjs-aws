@@ -1,6 +1,6 @@
 {
   "name": "rxjs-aws",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Reactive Extension interface to AWS sdk for Node",
   "main": "lib/rxjs-aws.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "dotenv": "^1.2.0",
     "lodash": "^3.10.1",
     "lodash-fp": "^0.10.2",
-    "predicate": "^0.12.0",
+    "predicate": "git://github.com/jadbox/predicate",
     "rx": "^3.1.2",
     "rxjs-plus": "git://github.com/jadbox/rxjs-plus"
   },
