@@ -1,16 +1,19 @@
-var rx = require('rxjs-plus'),
-	_ = require('lodash-fp'),
+var rx = require('rxjs-plus'), 
 	rxo = rx.Observable,
-	rxn = rxo.fromNodeCallback;
+	_ = require('lodash-fp'),
+	rxn = rx.Observable.fromNodeCallback;
 var fs = require('fs');
-console.log("global.Rx", global.Rx);
-
+//console.log("global.Rx", global.Rx);
 var env = require('dotenv').config({silent: true});
-var aws = require('./lib/rxjs-aws.js');
+
+require('./lib/rxjs-aws.js');
+
+//console.log("rxo.aws", rxo.aws);
+var aws = rxo.aws;
 
 aws.config.useEnv().setRegion('us-west-2');
 //console.log(aws.Lambda);
-console.log("rxo aws", rxo.aws);
+//console.log("rxo aws", rxo.aws);
 var lambda = new aws.Lambda();
 
 //var x = _.filter({'name': 'joe'}, [{'name':'joe', active:false}, {'name':'bob', active:false}]);
