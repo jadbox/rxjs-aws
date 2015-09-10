@@ -19,4 +19,4 @@ var lambda = new aws.Lambda();
 //var x = _.filter({'name': 'joe'}, [{'name':'joe', active:false}, {'name':'bob', active:false}]);
 //console.log(x);
 //lambda.listFunctions.pluck('FunctionName').filterIncludes('Pi').subscribe(console.log);
-lambda.listFunctions().propertyIncludes('FunctionName', 'LambdaPi').subscribe(console.log);
+lambda.listFunctions().propertyIncludes('FunctionName', 'Lambda').subscribe(console.log);
