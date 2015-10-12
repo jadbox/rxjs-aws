@@ -21,7 +21,7 @@
     "lodash": "^3.10.1",
     "lodash-fp": "^0.10.2",
     "predicate": "git://github.com/jadbox/predicate",
-    "rx": "^4.0.0",
+    "rx": "^4.0.1",
     "rxjs-plus": "git://github.com/jadbox/rxjs-plus"
   },
   "devDependencies": {
