@@ -1,6 +1,6 @@
 {
   "name": "rxjs-aws",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Reactive Extension interface to AWS sdk for Node",
   "main": "lib/rxjs-aws.js",
   "scripts": {
