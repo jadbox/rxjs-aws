@@ -17,12 +17,12 @@
   },
   "dependencies": {
     "aws-sdk": "^2.1.50",
-    "dotenv": "^1.2.0",
     "lodash": "^4.0.0",
     "predicate": "git://github.com/jadbox/predicate",
     "rxjs-plus": "git://github.com/jadbox/rxjs-plus"
   },
   "devDependencies": {
-    "benchmark": "^1.0.0"
+    "benchmark": "^1.0.0",
+    "dotenv": "^1.2.0"
   }
 }
