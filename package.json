@@ -1,29 +1,38 @@
 {
   "name": "rxjs-aws",
   "version": "0.1.22",
-  "description": "Reactive Extension interface to AWS sdk for Node",
-  "main": "lib/rxjs-aws.js",
+  "description": "",
   "scripts": {
+    "start": "node dist/rxjs-aws.js",
+    "build": "webpack --config webpack.config.js  --progress --colors --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jadbox/rxjs-aws.git"
   },
-  "author": "Jonathan Dunlap",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/jadbox/rxjs-aws/issues"
   },
+  "main": "dist/rxjs-aws.js",
+  "author": "Jonathan Dunlap <jdunlap@outlook.com>",
+  "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.1.50",
+    "dotenv": "^1.2.0",
     "lodash": "^4.0.0",
     "predicate": "git://github.com/jadbox/predicate",
+    "rx": "^4.0.7",
     "rx-node": "^1.0.1",
-    "rxjs-plus": "git://github.com/jadbox/rxjs-plus"
+    "webpack": "^1.12.9"
   },
   "devDependencies": {
     "benchmark": "^1.0.0",
-    "dotenv": "^1.2.0"
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-function-bind": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "path": "^0.12.7",
+    "source-map-support": "^0.4.0"
   }
 }
