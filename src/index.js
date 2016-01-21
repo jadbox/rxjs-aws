@@ -65,13 +65,13 @@ rxo.prototype.aws = {
             		.flatMap( x => {
             			const justx = rxo.just(x);
             			if(x.IsTruncated && x.NextMarker) {
-            				params.marker = x.NextMarker;
+            				params.Marker = x.NextMarker;
 							return justx.merge( wrapper.listObjects$(params) );
             			}
             			else if(x.IsTruncated && !x.NextMarker) {
             				const length = x.Contents.length;
             				const Key = x.Contents[length-1].Key;
-            				params.marker = Key;
+            				params.Marker = Key;
 							return justx.merge( wrapper.listObjects$(params) );
             			}
             			else return justx;
