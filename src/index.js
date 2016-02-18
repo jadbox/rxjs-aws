@@ -100,7 +100,8 @@ rxo.prototype.aws = {
                 Key: url
             };
             if(range) {
-                obj.Range = 'bytes='+range[0]+'-'+range[1];
+                if(range.length < 2 || range[1] === -1) obj.Range = 'bytes='+range[0]+'-';
+                else obj.Range = 'bytes='+range[0]+'-'+range[1];
             }
             console.log("Streaming from s3", "bucket: " + bucket, "key: " + url);
             
