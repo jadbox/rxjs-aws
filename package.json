@@ -18,12 +18,12 @@
   "author": "Jonathan Dunlap <jdunlap@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.1.50",
+    "aws-sdk": "^2.2.38",
     "dotenv": "^1.2.0",
-    "lodash": "^4.0.0",
+    "lodash": "^4.5.1",
     "predicate": "git://github.com/jadbox/predicate",
-    "rx": "^4.0.7",
-    "rx-node": "^1.0.1",
+    "rx": "^4.0.8",
+    "rx-node": "^1.0.2",
     "webpack": "^1.12.9"
   },
   "devDependencies": {
