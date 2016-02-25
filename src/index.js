@@ -46,6 +46,7 @@ rxo.aws =
 rxo.prototype.aws = {
     '_': aws,
     'config': aws.config,
+    'debug': false,
     'S3': function(params) {
         var wrapper = {};
         this._s3 = wrapAPI(aws.S3, params, wrapper);
@@ -82,7 +83,7 @@ rxo.prototype.aws = {
             if(url.indexOf('/') === -1) throw new Error('missing bucket name');
             var bucket = url.split('/')[0];
             url = url.replace(bucket + '/', '');
-            console.log("Delete from s3", "bucket: " + bucket, "key: " + url);
+            if(rxo.aws.debug) console.log("Delete from s3", "bucket: " + bucket, "key: " + url);
             var obj = {
                 Bucket: bucket,
                 Key: url
@@ -103,7 +104,7 @@ rxo.prototype.aws = {
                 if(range.length < 2 || range[1] === -1) obj.Range = 'bytes='+range[0]+'-';
                 else obj.Range = 'bytes='+range[0]+'-'+range[1];
             }
-            console.log("Streaming from s3", "bucket: " + bucket, "key: " + url);
+            if(rxo.aws.debug) console.log("Streaming from s3", "bucket: " + bucket, "key: " + url);
             
             var stream =  pipe ? _s3.getObject(obj).createReadStream().pipe(pipe) :
                         _s3.getObject(obj).createReadStream();
@@ -129,7 +130,7 @@ rxo.prototype.aws = {
                 //.retry(3)
                 .do(function(x) {
                     var finised_milliseconds = (new Date).getTime() - milliseconds;
-                    console.log("Fetched from s3", "bucket: " + bucket, "key: " + url + ' time: ' + finised_milliseconds);
+                    if(rxo.aws.debug) console.log("Fetched from s3", "bucket: " + bucket, "key: " + url + ' time: ' + finised_milliseconds);
                 })
                 .pluck('Body')
                 .map(x=>x.toString());
@@ -151,7 +152,7 @@ rxo.prototype.aws = {
                     return wrapper.putObject(obj)
                         .do(function(x) {
                             var finised_milliseconds = (new Date).getTime() - milliseconds;
-                            console.log("Saved to s3", "bucket: " + bucket, "key: " + url + ' time: ' + finised_milliseconds);
+                            if(rxo.aws.debug) console.log("Saved to s3", "bucket: " + bucket, "key: " + url + ' time: ' + finised_milliseconds);
                         });
                 }
 
