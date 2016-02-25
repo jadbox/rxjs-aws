@@ -1,6 +1,6 @@
 {
   "name": "rxjs-aws",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "",
   "scripts": {
     "start": "node dist/rxjs-aws.js",
