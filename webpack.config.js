@@ -46,6 +46,5 @@ module.exports = {
     plugins: [
     ],
     externals: nodeModules,
-    devtool: 'source-map',
-    debug: true
+    devtool: 'eval'
 }
