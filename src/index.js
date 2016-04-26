@@ -25,10 +25,12 @@ function wrapAPI(Constr, params, target) {
 
 // Set Access Key and Secret key from process env
 aws.config.useEnv = function() {
+  //console.log('process.env.AWS_REGION', process.env.AWS_REGION)
+  if(!process.env.AWS_REGION || !process.env.AWS_ACCESS_KEY_ID) return;
   aws.config.update({
     'accessKey': process.env.AWS_ACCESS_KEY_ID,
     'secretKey': process.env.AWS_SECRET_ACCESS_KEY,
-    'region': process.env.AWS_REGION
+    region: process.env.AWS_REGION
   });
   return aws.config;
 };
@@ -43,6 +45,7 @@ aws.config.setRegion = function(region) {
 
 export default function AWS(options) {
 	options = options || {};
+  aws.config.useEnv();
 
   return {
     '_': aws,
