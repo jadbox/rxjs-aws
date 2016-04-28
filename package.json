@@ -24,7 +24,7 @@
     "lodash": "^4.11.0",
     "predicate": "git://github.com/jadbox/predicate.git",
     "rx-node": "jadbox/rx-node#rxjs5",
-    "rxjs": "^5.0.0-beta.6",
+    "rxjs": "^5.0.0-beta.7",
     "webpack": "^1.12.15"
   },
   "devDependencies": {
